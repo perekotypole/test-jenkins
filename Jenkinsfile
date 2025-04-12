@@ -1,14 +1,14 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS_22'
-    }
-
     stages {
         stage('Prepare') {
             steps {
-                sh'node -v'
+                sh '''
+		    sudo apt-get update
+		    sudo apt-get indtall -y nodejs
+		    node -v
+		'''
             }
         }
 
