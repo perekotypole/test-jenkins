@@ -1,12 +1,14 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS_22'
+    }
+
     stages {
         stage('Prepare') {
             steps {
-                nodejs(nodeJSInstallationName: 'Node 22.x') {
-                    sh 'npm config ls'
-                }
+                sh'node -v'
             }
         }
 
