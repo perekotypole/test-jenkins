@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS_22'
+    }
+
     stages {
         stage('Prepare') {
             steps {
