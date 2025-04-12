@@ -1,14 +1,14 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS_22'
+    }
+
     stages {
         stage('Prepare') {
             steps {
-                sh '''
-		    curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-		    sudo apt-get indtall -y nodejs
-		    node -v
-		'''
+                sh 'node -v'
             }
         }
 
