@@ -5,7 +5,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 sh '''
-		    sudo apt-get update
+		    curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 		    sudo apt-get indtall -y nodejs
 		    node -v
 		'''
