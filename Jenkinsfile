@@ -8,10 +8,6 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                script {
-                    def nodeInstallation = tool name: 'NodeJS_22', type: 'NodeJSInstallation'
-                    env.PATH = "${nodeInstallation}/bin:${env.PATH}"
-                }
 		sh 'node -v'
             }
         }
